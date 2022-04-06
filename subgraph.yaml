@@ -24,3 +24,6 @@ dataSources:
       eventHandlers:
         - event: ItemBought(address,uint256,uint256)
           handler: handleItemBought
+      callHandlers:
+        - function: buy(string)
+          handler: handleBuy

@@ -5,6 +5,8 @@ type BoughtSlot @entity {
 
   price: BigInt!
   
+  slotId: String!
+
   itemId: String!
 
   timeBought: BigInt!
