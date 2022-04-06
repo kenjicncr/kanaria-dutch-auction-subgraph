@@ -3,18 +3,18 @@ import { BuyCall, ItemBought } from './types/KanariaDutchAuction/dutchAuctionAbi
 import { BoughtSlot } from './types/schema'
 
 export function handleItemBought(event: ItemBought): void  {
-  let itemId: string = event.params.itemId.toString();
+  let slotId: string = event.params.itemId.toString();
   let purchaser: Address = event.params.purchaser;
   let price: BigInt = event.params.price;
   let timestamp: BigInt = event.block.timestamp;
-  let txHash: string = event.transaction.hash.toHexString();
+  let txHash: string = event.transaction.hash.toHex()
 
   let boughtSlot = BoughtSlot.load(txHash)
 
   if(boughtSlot === null) {
     boughtSlot = new BoughtSlot(txHash)
     boughtSlot.price = price
-    boughtSlot.itemId = itemId
+    boughtSlot.slotId = slotId
     boughtSlot.purchaser = purchaser
     boughtSlot.timeBought = timestamp
     boughtSlot.save()
@@ -22,7 +22,7 @@ export function handleItemBought(event: ItemBought): void  {
 }
 
 export function handleBuy(call: BuyCall): void  {
-  let txHash: string = call.transaction.hash.toHexString();
+  let txHash: string = call.transaction.hash.toHex()
   let itemId: string = call.inputs._kanariaId
 
   let boughtSlot = BoughtSlot.load(txHash)
