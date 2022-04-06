@@ -10,7 +10,7 @@ dataSources:
     source:
       address: '0xe22eAB55FD277Ea6Ecd8B78Aea969d44A13916fE'
       abi: dutchAuctionAbi
-      startBlock: 1482028
+      startBlock: 1674348
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
