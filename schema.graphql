@@ -1,13 +1,13 @@
 type BoughtSlot @entity {
   id: ID!
 
-  purchaser: Bytes!
+  purchaser: Bytes
 
-  price: BigInt!
+  price: BigInt
   
-  slotId: String!
+  slotId: String
 
-  itemId: String!
+  itemId: String
 
-  timeBought: BigInt!
+  timeBought: BigInt
 }
