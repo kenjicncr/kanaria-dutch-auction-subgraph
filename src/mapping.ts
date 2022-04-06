@@ -3,7 +3,7 @@ import { ItemBought } from './types/KanariaDutchAuction/dutchAuctionAbi'
 import { BoughtSlot } from './types/schema'
 
 export function handleItemBought(event: ItemBought): void  {
-  let itemId: string = event.params.itemId.toString();
+  let itemId: string = event.params.itemId.toHexString();
   let purchaser: Address = event.params.purchaser;
   let price: BigInt = event.params.price;
   let timestamp: BigInt = event.block.timestamp;
