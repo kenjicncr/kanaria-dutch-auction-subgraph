@@ -9,5 +9,7 @@ type BoughtSlot @entity {
 
   itemId: String
 
+  note: String
+
   timeBought: BigInt
 }

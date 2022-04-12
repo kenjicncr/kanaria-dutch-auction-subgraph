@@ -8,7 +8,7 @@ dataSources:
     name: KanariaDutchAuction
     network: moonriver
     source:
-      address: '0xe22eAB55FD277Ea6Ecd8B78Aea969d44A13916fE'
+      address: '0x9E1C63e672b54925eC2ED842e6DFcb32dF232f70'
       abi: dutchAuctionAbi
       startBlock: 1674348
     mapping:
@@ -25,5 +25,5 @@ dataSources:
         - event: ItemBought(address,uint256,uint256)
           handler: handleItemBought
       callHandlers:
-        - function: buy(string)
+        - function: buy(string,string)
           handler: handleBuy

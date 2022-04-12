@@ -24,15 +24,18 @@ export function handleItemBought(event: ItemBought): void  {
 export function handleBuy(call: BuyCall): void  {
   let txHash: string = call.transaction.hash.toHex()
   let itemId: string = call.inputs._kanariaId
+  let note: string = call.inputs._note
 
   let boughtSlot = BoughtSlot.load(txHash)
 
   if(boughtSlot === null) {
     boughtSlot = new BoughtSlot(txHash)
     boughtSlot.itemId = itemId
+    boughtSlot.note = note
     boughtSlot.save()
   } else {
     boughtSlot.itemId = itemId
+    boughtSlot.note = note
     boughtSlot.save()
   }
 }
