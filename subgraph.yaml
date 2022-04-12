@@ -8,7 +8,7 @@ dataSources:
     name: KanariaDutchAuction
     network: moonriver
     source:
-      address: '0x7A010bd5045F9EeB31328a8765021E88bad04260'
+      address: '0x6DcFF9fD60bC12EdeAD4141001f0C8693Cf5885A'
       abi: dutchAuctionAbi
       startBlock: 1699603
     mapping:
